@@ -1,0 +1,67 @@
+/* Sticky footer styles */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Left side links */
+  .footer-left {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #7b7c7d;
+  }
+  
+  /* Right side arrow with round border */
+  .footer-right {
+    display: flex;
+    align-items: center;
+    margin-right: 65px;
+  }
+  
+  .arrow-container {
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .arrow-container:hover {
+    background-color: #7b7c7d;
+    border-color: #000000;
+  }
+  
+  .arrow {
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  /* Sticky footer position ensures it stays at the bottom */
+  body {
+    margin: 0;
+    padding-bottom: 60px; /* To avoid content overlapping with the footer */
+    box-sizing: border-box;
+  }
+  

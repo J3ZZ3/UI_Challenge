@@ -1,0 +1,131 @@
+/* Basic styling for the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Allows absolute positioning of navbar-right in responsive design */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left h1 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.navbar-left p {
+  font-weight: bold;
+}
+
+.navbar-hamburger-and-buttons {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure buttons and content are aligned on larger screens */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-right button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.primary-btn {
+  background-color: #000000 !important;
+  color: white !important;
+  border-radius: 2px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-btn:hover {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+}
+
+/* Responsive Menu - Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .navbar-left h1 {
+    font-size: 1.2rem; /* Reduce font size for smaller screens */
+  }
+
+  .navbar-hamburger-and-buttons {
+    justify-content: space-between;
+    width: 100%; /* Stretch the buttons and hamburger across the screen */
+  }
+
+  .navbar-right {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    display: none;
+    transition: max-height 0.3s ease-in-out; /* Smooth transition for menu opening */
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+  }
+
+  .navbar-right.open {
+    display: flex;
+    max-height: 300px; /* Set maximum height when menu is open */
+  }
+
+  .navbar-right button {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: flex; /* Display hamburger on small screens */
+  }
+}
+
+/* Smooth transition for showing/hiding the menu */
+.navbar-right {
+  transition: transform 0.3s ease-in-out;
+}
+
